@@ -91,24 +91,33 @@ hibernate:
 dataSource:
     pooled: true
     jmxExport: true
-    driverClassName: com.mysql.cj.jdbc.Driver
-    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-    username: user
-    password: user1234
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+
+    # pooled: true
+    # jmxExport: true
+    # driverClassName: com.mysql.cj.jdbc.Driver
+    # dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    # username: user
+    # password: user1234
 
 environments:
     development:
         dataSource:
             dbCreate: create-drop
-            url: jdbc:mysql://localhost:3306/grails_test
+            #url: jdbc:mysql://localhost:3306/grails_test
+            url: jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     test:
         dataSource:
             dbCreate: update
-            url: jdbc:mysql://localhost:3306/grails_test_test
+            #url: jdbc:mysql://localhost:3306/grails_test_test
+            url: jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
     production:
         dataSource:
             dbCreate: none
-            url: jdbc:mysql://localhost:3306/grails_test
+            url: jdbc:h2:./prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE
+            #url: jdbc:mysql://localhost:3306/grails_test
             properties:
                 jmxEnabled: true
                 initialSize: 5
