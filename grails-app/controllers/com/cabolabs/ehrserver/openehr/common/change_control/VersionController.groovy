@@ -37,7 +37,7 @@ class VersionController {
                 templateId: 'ehr_status.en.v1',
                 isModifiable: true,
                 isQueryable: true,
-                name: new DvTextIndex(
+                    dvTextIndex: new DvTextIndex(
                     value:                "EHR Status",
                     templateId:           "default_ehr_status.en.v1",
                     archetypeId:          "openEHR-EHR-EHR_STATUS.generic.v1",

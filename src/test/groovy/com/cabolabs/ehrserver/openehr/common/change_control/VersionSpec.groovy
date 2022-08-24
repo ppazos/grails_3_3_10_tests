@@ -1,6 +1,6 @@
 package com.cabolabs.ehrserver.openehr.common.change_control
 
-import grails.testing.gorm.DomainUnitTest
+
 import spock.lang.Specification
 
 import com.cabolabs.ehrserver.openehr.ehr.EhrStatus
@@ -35,7 +35,7 @@ class VersionSpec extends Specification implements DataTest { //DomainUnitTest<V
                 templateId: 'ehr_status.en.v1',
                 isModifiable: true,
                 isQueryable: true,
-                name: new DvTextIndex(
+                    dvTextIndex: new DvTextIndex(
                     value:                "EHR Status",
                     templateId:           "default_ehr_status.en.v1",
                     archetypeId:          "openEHR-EHR-EHR_STATUS.generic.v1",
