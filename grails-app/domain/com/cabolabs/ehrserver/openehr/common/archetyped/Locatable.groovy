@@ -12,7 +12,7 @@ class Locatable {
     Date validUntil
     boolean lastVersion = true
 
-    DvTextIndex name
+    DvTextIndex dvTextIndex
 
     static mapping = {
       tablePerHierarchy false
